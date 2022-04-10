@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    container_name: nrs-website
+    image: php:fpm-alpine3.14
+    command: ["sh", "-c", "php -S 0.0.0.0:30755"]
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 30755:30755
